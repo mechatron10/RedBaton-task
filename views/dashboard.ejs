@@ -1,0 +1,14 @@
+<%- include('layouts/header.ejs') %>
+    <h1>Latest News</h1>
+    <div class="news-container">
+        <% newsItems.forEach(item => { %>
+            <div class="news-item">
+                <h2><a href="<%= item.url %>" target="_blank"><%= item.title %></a></h2>
+                <p>Posted On: <%= item.postedOn %></p>
+                <p>Upvotes: <%= item.upvotesCount %></p>
+                <p>Comments: <%= item.commentsCount %></p>
+                <!-- Add more details if needed -->
+            </div>
+        <% }); %>
+    </div>
+<%- include('layouts/footer.ejs') %>
