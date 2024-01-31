@@ -16,7 +16,7 @@ user_route.use(session({secret:SESSION_SECRET,resave:true,saveUninitialized:fals
 user_route.use(bodyParser.json());
 user_route.get('/register',isLogout,registerLoad);//implement the middleware
 user_route.post("/register",registerUser);
-user_route.get('/login',loadLogin);
+user_route.get('/login',isLogout,loadLogin);
 user_route.post("/login",loginUser);
 user_route.get('/dashboard',isLogin,loadDashboard);
 module.exports = user_route;
